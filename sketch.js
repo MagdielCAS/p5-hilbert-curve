@@ -9,7 +9,8 @@ let rules = {
 
 let iterations = 6;
 let regex;
-let s = 10;
+let s = 30;
+let velocity = 5;
 let result = "";
 let l = "";
 let counter = 0;
@@ -83,11 +84,12 @@ function draw() {
       let x = r * cos(theta) + lastX;
       let y = r * sin(theta) + lastY;
       vertex(x, y);
+      circle(x, y, 0.4);
       lastX = x;
       lastY = y;
     }
   }
-  counter = counter + (counter < result.length);
+  counter = counter + (counter < result.length) * velocity;
   endShape();
 }
 
